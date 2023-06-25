@@ -163,6 +163,7 @@ static void draw_callback(Canvas* canvas, void* ctx) {
             canvas_draw_str(canvas, 30, 35, "Player O win!");
         }
 
+        dolphin_deed(DolphinDeedGameWin);
         furi_mutex_release(fourinrow_state->mutex);
 
         return;
@@ -235,7 +236,7 @@ int32_t four_in_row_app(void* p) {
         return 255;
     }
 
-    //DOLPHIN_DEED(DolphinDeedPluginGameStart);
+    dolphin_deed(DolphinDeedGameStart);
 
     // Создаем новый view port
     ViewPort* view_port = view_port_alloc();
